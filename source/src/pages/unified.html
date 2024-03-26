@@ -1,0 +1,141 @@
+<extends src="layouts/azure-blue.html" locals='{"title": "Sign-in / Sign-up"}'>
+  <block name="head">
+    <style lang="postcss">
+      main {
+        input:not([type='submit']) {
+          @apply w-[clamp(10rem,100%,25rem)] p-2 rounded border-2 border-brand-turquoise/75 shadow-sm;
+          @apply focus:ring focus:ring-brand-turquoise/50;
+        }
+      }
+
+      .entry-item {
+        @apply my-4;
+      }
+
+      .divider {
+        @apply hidden;
+      }
+
+      .forgot-password {
+        @apply my-2 text-sm;
+      }
+
+      .create {
+        @apply my-2;
+
+        a {
+          @apply inline-block mx-1;
+        }
+      }
+    </style>
+  </block>
+  <block name="body">
+    <div class="container max-w-screen-lg mx-auto">
+      <div class="flex flex-row flex-wrap gap-4">
+        <main
+          id="api"
+          class="lg:w-[clamp(400px,45ch,100vw)] grow py-16 px-4"
+          role="main"
+        >
+          <!-- @remove in prod -->
+          <div class="heading">
+            <h1 role="heading">Sign in</h1>
+          </div>
+          <form
+            id="localAccountForm"
+            class="localAccount"
+            aria-label="Sign in with your email address"
+          >
+            <div class="intro">
+              <h2>Sign in with your email address</h2>
+            </div>
+            <div class="error pageLevel" aria-hidden="true" role="alert">
+              <p></p>
+            </div>
+            <div class="entry">
+              <div class="entry-item">
+                <div class="error itemLevel" aria-hidden="true" role="alert">
+                  <p></p>
+                </div>
+                <input
+                  type="email"
+                  id="email"
+                  name="Email Address"
+                  title="Please enter a valid email address"
+                  pattern="^[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+(?:\.[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$"
+                  autofocus=""
+                  placeholder="Email Address"
+                  aria-label="Email Address"
+                />
+              </div>
+              <div class="entry-item">
+                <div class="password-label"></div>
+                <div class="error itemLevel" aria-hidden="true">
+                  <p role="alert"></p>
+                </div>
+                <input
+                  type="password"
+                  id="password"
+                  name="Password"
+                  placeholder="Password"
+                  aria-label="Password"
+                  autocomplete="current-password"
+                  aria-required="true"
+                />
+                <div class="forgot-password center-height">
+                  <a
+                    id="forgotPassword"
+                    href="/unityssotest.onmicrosoft.com/B2C_1_SignUp_SignIn_Web_Dev_English/api/CombinedSigninAndSignup/unified?claimsexchange=ForgotPassword&amp;csrf_token=VWpMUVRzODUvVnRvNThoNVFXZUJrNDVBaTBES0lrZWdTOEJMd2F1M0x0VE1vYStLbWRtZWxrKzlodXVmd0UvQVFJMU5VNWVaQUhBUE9aamRKMXpMMXc9PTsyMDI0LTAzLTI2VDAwOjE5OjIxLjU1NzQzNTVaO0R2STRWMEw5aEk2aFdqSEcweVk2WWc9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiJmZmM4YmNhNy0wNjk4LTQwYzUtODRhZC1hZmQ2NDI0ZWY1ZGYifQ&amp;p=B2C_1_SignUp_SignIn_Web_Dev_English"
+                    >Forgot your password?</a
+                  >
+                </div>
+              </div>
+              <div class="working"></div>
+
+              <div class="buttons">
+                <button id="next" type="submit" form="localAccountForm">
+                  Sign in
+                </button>
+              </div>
+            </div>
+            <div class="divider">
+              <h2>OR</h2>
+            </div>
+            <div class="create">
+              <p>
+                Don't have an account?<a
+                  id="createAccount"
+                  href="/unityssotest.onmicrosoft.com/B2C_1_SignUp_SignIn_Web_Dev_English/api/CombinedSigninAndSignup/unified?local=signup&amp;csrf_token=VWpMUVRzODUvVnRvNThoNVFXZUJrNDVBaTBES0lrZWdTOEJMd2F1M0x0VE1vYStLbWRtZWxrKzlodXVmd0UvQVFJMU5VNWVaQUhBUE9aamRKMXpMMXc9PTsyMDI0LTAzLTI2VDAwOjE5OjIxLjU1NzQzNTVaO0R2STRWMEw5aEk2aFdqSEcweVk2WWc9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiJmZmM4YmNhNy0wNjk4LTQwYzUtODRhZC1hZmQ2NDI0ZWY1ZGYifQ&amp;p=B2C_1_SignUp_SignIn_Web_Dev_English"
+                  >Sign up now</a
+                >
+              </p>
+            </div>
+          </form>
+          <div class="divider">
+            <h2>OR</h2>
+          </div>
+          <!-- /@remove -->
+        </main>
+        <aside class="lg:w-[clamp(400px,45ch,100vw)] py-16 px-4 bg-gray-100">
+          <div class="space-y-4">
+            <h2 class="heading text-4xl text-brand-turquoise">
+              Don&#x2019;t have an account? Sign up today!
+            </h2>
+            <p class="body">
+              By creating an account, you can easily review your transaction and
+              donation history, access our magazine content with a subscription,
+              and update your user information as needed.
+            </p>
+            <div class="actions">
+              <a
+                class="button button-blue font-semibold"
+                href="https://shop.unity.org/Users/Account/Register"
+                >Register</a
+              >
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </block>
+</extends>

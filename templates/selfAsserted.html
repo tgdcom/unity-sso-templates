@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User details</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style lang="postcss">
+      body {
+
+    font-family: Montserrat, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+}
+
+      h1[role='heading'] {
+
+    margin-top: 2rem;
+
+    margin-bottom: 2rem;
+
+    font-size: 2.25rem;
+
+    line-height: 2.5rem;
+
+    font-weight: 700
+}
+
+      main a {
+
+    color: hsl(191 100% 31% / 0.9)
+}
+
+      main a:hover {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(191 100% 31% / var(--tw-text-opacity));
+
+    text-decoration-line: underline
+}
+
+      main .heading {
+
+    margin-top: 2rem;
+
+    margin-bottom: 3rem;
+
+    font-family: PT Serif, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+    font-size: 2.25rem;
+
+    line-height: 2.5rem;
+
+    --tw-text-opacity: 1;
+
+    color: hsl(191 100% 31% / var(--tw-text-opacity))
+}
+    </style>
+
+    
+    <style lang="postcss">
+        main input:not([type='submit']) {
+        width: clamp(10rem,100%,25rem);
+        border-radius: 0.25rem;
+        border-width: 2px;
+        border-color: hsl(191 100% 31% / 0.75);
+        padding: 0.5rem;
+        --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+        main input:not([type='submit']):focus {
+        --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+        --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+        box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+        --tw-ring-color: hsl(191 100% 31% / 0.5);
+}
+
+      .entry-item {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+}
+
+      .divider {
+        display: none;
+}
+
+      .forgot-password {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+}
+
+      .create {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+}
+
+      .create a {
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+        display: inline-block;
+}
+
+      .buttons #cancel {
+        padding: 0;
+        margin-left: auto;
+        background: 0 0;
+        border: 0;
+        width: inherit;
+        position: absolute;
+        background-color: transparent;
+        top: calc(4rem - 2px);
+        right: 15px;
+        font-size: 1em;
+        color: #505050;
+        box-shadow: none;
+        text-align: left;
+      }
+    </style>
+  
+    <link rel="stylesheet" crossorigin href="/assets/main-BRc2ypmj.css">
+  </head>
+  <body>
+    <div class="flex flex-col justify-start w-full h-full min-h-lvh">
+      <header class="pt-1 pb-2 px-4 border-solid border-t-8 border-b-4 border-[#008DAB]">
+        <div class="container mx-auto">
+          <a href="https://www.unity.org" class="inline-block m-2 ml-0">
+            <img alt="Unity Logo" class="h-16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACLCAYAAADbE6SXAAAACXBIWXMAAC4jAAAuIwF4pT92AAAF92lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNi4wLWMwMDUgNzkuMTY0NTkwLCAyMDIwLzEyLzA5LTExOjU3OjQ0ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjIuMSAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjAtMDYtMTFUMTU6MzA6MjctMDQ6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIxLTAxLTI3VDEyOjM1OjIyLTA1OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIxLTAxLTI3VDEyOjM1OjIyLTA1OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmI3OGM0YTAwLTYwYTgtNGRiMy1iNTA4LWVjYzIyYzg0NmU2ZiIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjU5MmJiYWQ5LTgyMDAtZmE0YS04N2VlLTA4OTY5YmY2ODIyYiIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjM0ZDBmMjNhLWFkNTctNDUxMi1hZDlkLWZhYjJhNTRlYjc2NyI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MzRkMGYyM2EtYWQ1Ny00NTEyLWFkOWQtZmFiMmE1NGViNzY3IiBzdEV2dDp3aGVuPSIyMDIwLTA2LTExVDE1OjMwOjI3LTA0OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjIuMSAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6Yjc4YzRhMDAtNjBhOC00ZGIzLWI1MDgtZWNjMjJjODQ2ZTZmIiBzdEV2dDp3aGVuPSIyMDIxLTAxLTI3VDEyOjM1OjIyLTA1OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjIuMSAoTWFjaW50b3NoKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6OvhkLAAAVBUlEQVR42u2deZxU1ZXHv9Ubzb6ogGLjwiIqBjFK3HEPUcdEjahxXCYSkxl3/WhM1BgdJxozYYyZfJKJ4pjxMy7EcdyNaBQU1CjiigtuuCCi7A00NL3MH+fU1KPoqq7uuu9Vtf37fj7v092v6t13+773fu+ec889N9Xa2ooQQnQFKtQEQggJlhBCBKYqe0dq6nS1iugIPYFdgLHA1sBgoAbYAHwOfAbM922jmkt0lNaLJucWLCE6wETfxgO7AlsBAyKfLwe+cLGaCzwF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">
+          </a>
+        </div>
+      </header>
+      <div class="grow flex px-4">
+        <div class="container grow flex mx-auto" role="presentation">
+          
+    <main id="api" class="relative grow py-16 px-4" role="main">
+      <!-- @remove in prod -->
+      <div class="heading">
+        <h1 role="heading">User Details</h1>
+      </div>
+      <div class="buttons">
+        <button id="cancel" aria-label="Cancel" formnovalidate="">
+          Cancel
+        </button>
+      </div>
+      <div class="intro">
+        <p>Please provide the following details.</p>
+      </div>
+      <form id="attributeVerification">
+        <div id="requiredFieldMissing" class="error pageLevel" style="display: none" aria-hidden="true">
+          A required field is missing. Please fill out all required fields and
+          try again.
+        </div>
+        <div id="fieldIncorrect" class="error pageLevel" style="display: none" aria-hidden="true">
+          One or more fields are filled out incorrectly. Please check your
+          entries and try again.
+        </div>
+        <div id="captchaUnresolved" class="error pageLevel" style="display: none" aria-hidden="true">
+          Captcha challenge is not resolved. Please solve it to proceed.
+        </div>
+        <div id="claimVerificationServerError" class="error pageLevel" style="display: none" aria-hidden="true"></div>
+        <div id="attributeList" class="attr">
+          <ul>
+            <li class="VerificationControl emailVerificationControl_li">
+              <div class="attrEntry">
+                <label id="emailVerificationControl_label" for="emailVerificationControl" class=""></label>
+                <div class="error itemLevel" role="alert"></div>
+                <div class="verificationControlContent" id="emailVerificationControl">
+                  <div class="verificationInfoText">
+                    <div id="emailVerificationControl_info_message" aria-hidden="true" role="alert" aria-label="Verification is necessary. Please click Send button." style="display: none">
+                      Verification is necessary. Please click Send button.
+                    </div>
+                  </div>
+                  <div class="verificationSuccessText">
+                    <div id="emailVerificationControl_success_message" aria-hidden="true" role="alert" aria-label="" style="display: none"></div>
+                  </div>
+                  <div class="verificationErrorText error">
+                    <div id="emailVerificationControl_error_message" aria-hidden="true" role="alert" aria-label="" style="display: none"></div>
+                  </div>
+                  <ul>
+                    <li class="EmailBox email_li email" aria-hidden="false" style="display: inline">
+                      <div class="attrEntry">
+                        <div class="error itemLevel" role="alert"></div>
+                        <input id="email" class="textInput" type="email" placeholder="Email Address" aria-label="Email Address" pattern="^[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+(?:\.[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$" title="Email address that can be used to contact you." aria-required="true" autofocus="autofocus"><span class="required">*</span><a class="helpLink tiny" href="javascript:void(0)" data-help="Email address that can be used to contact you.">What is this?</a>
+                      </div>
+                    </li>
+                    <li class="TextBox emailVerificationCode_li VerificationCode" aria-hidden="true" style="display: none">
+                      <div class="attrEntry">
+                        <div class="error itemLevel" role="alert"></div>
+                        <input id="emailVerificationCode" class="textInput" type="text" placeholder="Verification Code" aria-label="Verification Code" title="Enter your verification code" aria-required="true" autocomplete="off" disabled=""><span class="required">*</span><a class="helpLink tiny" href="javascript:void(0)" data-help="Enter your verification code">What is this?</a>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="working" style="display: none" aria-hidden="true"></div>
+                  <div class="buttons">
+                    <button class="sendCode" id="emailVerificationControl_but_send_code" type="button" aria-label="Send verification code" aria-hidden="false" style="display: inline">
+                      Send verification code</button><button class="verifyCode" id="emailVerificationControl_but_verify_code" type="button" aria-label="Verify code" aria-hidden="true" style="display: none">
+                      Verify code</button><button class="sendNewCode" id="emailVerificationControl_but_send_new_code" type="button" aria-label="Send new code" aria-hidden="true" style="display: none">
+                      Send new code</button><button class="changeClaims" id="emailVerificationControl_but_change_claims" type="button" aria-label="Change e-mail" aria-hidden="true" style="display: none">
+                      Change e-mail
+                    </button>
+                  </div>
+                </div>
+                <a class="helpLink tiny" href="javascript:void(0)">What is this?</a>
+              </div>
+            </li>
+            <li class="Password newPassword_li">
+              <div class="attrEntry">
+                <div class="error itemLevel" role="alert"></div>
+                <input id="newPassword" class="textInput" type="password" placeholder="New Password" aria-label="New Password" title="Enter new password" autocomplete="new-password" aria-required="true" aria-disabled="true" disabled="disabled" tabindex="-1"><span class="required">*</span><a class="helpLink tiny" href="javascript:void(0)" data-help="Enter new password">What is this?</a>
+              </div>
+            </li>
+            <li class="Password reenterPassword_li">
+              <div class="attrEntry">
+                <div class="error itemLevel" role="alert"></div>
+                <input id="reenterPassword" class="textInput" type="password" placeholder="Confirm New Password" aria-label="Confirm New Password" title="Confirm new password" autocomplete="new-password" aria-required="true" aria-disabled="true" disabled="disabled" tabindex="-1"><span class="required">*</span><a class="helpLink tiny" href="javascript:void(0)" data-help="Confirm new password">What is this?</a>
+              </div>
+            </li>
+            <li class="TextBox givenName_li">
+              <div class="attrEntry">
+                <div class="error itemLevel" role="alert"></div>
+                <input id="givenName" class="textInput" type="text" placeholder="First Name" aria-label="First Name" title="Your given name (also known as first name)." aria-required="true" aria-disabled="true" disabled="disabled" tabindex="-1"><span class="required">*</span><a class="helpLink tiny" href="javascript:void(0)" data-help="Your given name (also known as first name).">What is this?</a>
+              </div>
+            </li>
+            <li class="TextBox surname_li">
+              <div class="attrEntry">
+                <div class="error itemLevel" role="alert"></div>
+                <input id="surname" class="textInput" type="text" placeholder="Last Name" aria-label="Last Name" title="Your surname (also known as family name or last name)." aria-required="true" aria-disabled="true" disabled="disabled" tabindex="-1"><span class="required">*</span><a class="helpLink tiny" href="javascript:void(0)" data-help="Your surname (also known as family name or last name).">What is this?</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="buttons">
+          <button id="continue" type="submit" form="attributeVerification" aria-disabled="true" aria-label="Create" tabindex="-1">
+            Create
+          </button>
+        </div>
+
+        <div class="verifying-modal" aria-live="assertive" aria-labelledby="verifying_blurb">
+          <div id="verifying_blurb"></div>
+        </div>
+      </form>
+
+      <!-- /@remove -->
+    </main>
+  
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

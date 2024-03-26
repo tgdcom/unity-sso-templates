@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .button,
+  .button-secondary {
+    @apply border-brand-moss border-2 bg-brand-moss duration-500 ease-in-out font-medium font-sans inline-block leading-none no-underline px-[1em] py-[1em] rounded-full text-sm text-white tracking-widest transition text-center uppercase hover:bg-white hover:text-brand-moss;
+
+    cursor: pointer;
+  }
+
+  .button-base {
+    @apply inline-block px-[1em] py-[1em] font-medium font-sans text-center tracking-widest leading-none uppercase no-underline border-2 transition duration-500 ease-in-out;
+
+    cursor: pointer;
+  }
+
+  .button-square {
+    @apply rounded-sm;
+  }
+
+  .button-sm {
+    @apply px-[1em] py-[0.75em];
+  }
+
+  .button-blue {
+    @apply border-primary-500 bg-primary-500 text-white hover:bg-white hover:text-primary-500;
+  }
+
+  .button-blue-to-green {
+    @apply border-primary-500 bg-primary-500 text-white hover:border-brand-moss hover:bg-brand-moss;
+  }
+
+  .button-green {
+    @apply border-brand-moss bg-brand-moss text-white hover:bg-white hover:text-brand-moss;
+  }
+
+  .button-blue-inverted,
+  .button-green-inverted {
+    @apply bg-white hover:text-white;
+  }
+
+  .button-blue-inverted {
+    @apply border-primary-500 text-primary-500 hover:bg-primary-500;
+  }
+
+  .button-green-inverted {
+    @apply border-brand-moss text-brand-moss hover:bg-brand-moss;
+  }
+}
+
+.buttons button {
+  @apply button-secondary;
+}
+
+.page-content a.button-secondary {
+  @apply py-[0.5em];
+}

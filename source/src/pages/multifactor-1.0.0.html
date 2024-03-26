@@ -1,0 +1,46 @@
+<extends
+  src="layouts/azure-blue.html"
+  locals='{"title": "Multi Factor Authentication"}'
+>
+  <block name="head">
+    <style lang="postcss">
+      main {
+        input:not([type='submit']) {
+          @apply w-[clamp(10rem,100%,25rem)] p-2 rounded border-2 border-brand-turquoise/75 shadow-sm;
+          @apply focus:ring focus:ring-brand-turquoise/50;
+        }
+      }
+
+      .entry-item {
+        @apply my-4;
+      }
+
+      .divider {
+        @apply hidden;
+      }
+
+      .forgot-password {
+        @apply my-2 text-sm;
+      }
+
+      .create {
+        @apply my-2;
+
+        a {
+          @apply inline-block mx-1;
+        }
+      }
+    </style>
+  </block>
+  <block name="body">
+    <main id="api" class="grow py-16 px-4" role="main">
+      <!-- @remove in prod -->
+      <div
+        class="placeholder grid place-content-center w-full h-full text-5xl text-slate-200 bg-slate-500"
+      >
+        Placeholder
+      </div>
+      <!-- /@remove -->
+    </main>
+  </block>
+</extends>
