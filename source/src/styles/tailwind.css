@@ -55,17 +55,17 @@
   }
 }
 
-.buttons button {
-  @apply button-secondary;
-
-  &:disabled,
-  &[aria-disabled='true'] {
-    @apply !button-disabled;
-  }
-}
-
 .buttons {
   @apply text-center;
+
+  button {
+    @apply button-secondary;
+
+    &:disabled,
+    &[aria-disabled='true'] {
+      @apply !button-disabled;
+    }
+  }
 
   .sendCode {
     @apply button-blue button-sm;
