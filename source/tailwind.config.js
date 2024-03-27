@@ -42,6 +42,9 @@ export default {
             500: 'hsl(0, 3%, 63%)',
             200: 'hsl(180, 5%, 96%)',
           },
+          blue: {
+            600: brand.turquoise,
+          },
         }
       },
       aspectRatio: (theme) => ({

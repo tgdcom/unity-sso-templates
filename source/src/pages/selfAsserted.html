@@ -3,8 +3,29 @@
     <style lang="postcss">
       main {
         input:not([type='submit']) {
-          @apply w-[clamp(10rem,100%,25rem)] p-2 rounded border-2 border-brand-turquoise/75 shadow-sm;
+          @apply w-[90%] p-2 rounded border-2 border-brand-turquoise/75 shadow-sm;
           @apply focus:ring focus:ring-brand-turquoise/50;
+          @apply disabled:border-slate-500/75;
+        }
+      }
+
+      .attrEntry {
+        @apply my-4;
+
+        input:not([type='submit']) {
+          @apply w-[calc(100%-1ch-0.5rem)];
+        }
+
+        &:has(> input:disabled) {
+          @apply opacity-50;
+        }
+
+        .required {
+          @apply inline-block ml-2 text-lg text-red-500;
+        }
+
+        .helpLink {
+          @apply block hidden text-right;
         }
       }
 
@@ -46,7 +67,11 @@
     </style>
   </block>
   <block name="body">
-    <main id="api" class="relative grow py-16 px-4" role="main">
+    <main
+      id="api"
+      class="relative grow max-w-screen-sm mx-auto py-16 px-4"
+      role="main"
+    >
       <!-- @remove in prod -->
       <div class="heading">
         <h1 role="heading">User Details</h1>

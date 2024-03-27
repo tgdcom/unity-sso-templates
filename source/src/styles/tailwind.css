@@ -48,10 +48,35 @@
   .button-green-inverted {
     @apply border-brand-moss text-brand-moss hover:bg-brand-moss;
   }
+
+  .button-disabled {
+    @apply bg-gray-300 border-gray-300 cursor-not-allowed text-gray-700;
+    @apply hover:bg-gray-300 hover:border-gray-300 hover:text-gray-700;
+  }
 }
 
 .buttons button {
   @apply button-secondary;
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    @apply !button-disabled;
+  }
+}
+
+.buttons {
+  @apply text-center;
+
+  .sendCode {
+    @apply button-blue button-sm;
+  }
+
+  .sendCode,
+  .verifyCode,
+  .sendNewCode,
+  .changeClaims {
+    @apply m-1;
+  }
 }
 
 .page-content a.button-secondary {
