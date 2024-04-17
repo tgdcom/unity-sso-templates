@@ -28,6 +28,18 @@
           @apply inline-block mx-1;
         }
       }
+
+      .invisible {
+        visibility: hidden;
+      }
+
+      .js-hide {
+        visibility: hidden !important;
+      }
+
+      .js-show {
+        visibility: visible !important;
+      }
     </style>
   </block>
   <block name="body">
@@ -125,8 +137,9 @@
             </p>
             <div class="actions">
               <a
-                class="button button-blue font-semibold"
-                href="https://shop.unity.org/Users/Account/Register"
+                id="register-link"
+                class="button button-blue font-semibold invisible"
+                href=""
                 >Register</a
               >
             </div>
@@ -134,5 +147,20 @@
         </div>
       </div>
     </div>
+
+    <script type="module">
+      ;((window, document) => {
+        const $registerLink = document.getElementById('register-link')
+        const $createAccount = document.getElementById('createAccount')
+
+        if (!$registerLink || !$createAccount) return
+
+        const href = $createAccount.getAttribute('href')
+        $registerLink.setAttribute('href', href)
+        $registerLink.classList.add('js-show')
+        $createAccount.closest('.create').classList.add('js-hide')
+      })(window, window.document, undefined)
+      init()
+    </script>
   </block>
 </extends>
