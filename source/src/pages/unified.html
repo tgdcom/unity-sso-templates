@@ -1,6 +1,14 @@
 <extends src="layouts/azure-blue.html" locals='{"title": "Sign-in / Sign-up"}'>
   <block name="head">
     <style lang="postcss">
+      .main {
+        @apply lg:w-[clamp(400px,45ch,100vw)] grow py-16 px-4;
+      }
+
+      .aside {
+        @apply lg:w-[clamp(400px,45ch,100vw)] py-16 px-4 bg-gray-100;
+      }
+
       .entry-item {
         @apply my-4;
       }
@@ -25,11 +33,7 @@
   <block name="body">
     <div class="container max-w-screen-lg mx-auto">
       <div class="flex flex-row flex-wrap gap-4">
-        <main
-          id="api"
-          class="lg:w-[clamp(400px,45ch,100vw)] grow py-16 px-4"
-          role="main"
-        >
+        <main id="api" class="main" role="main">
           <!-- @remove in prod -->
           <div class="heading">
             <h1 role="heading">Sign in</h1>
@@ -109,7 +113,7 @@
           </div>
           <!-- /@remove -->
         </main>
-        <aside class="lg:w-[clamp(400px,45ch,100vw)] py-16 px-4 bg-gray-100">
+        <aside class="aside">
           <div class="space-y-4">
             <h2 class="heading text-4xl text-brand-turquoise">
               Don&#x2019;t have an account? Sign up today!
