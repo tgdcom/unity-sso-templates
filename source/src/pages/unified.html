@@ -41,6 +41,21 @@
         visibility: visible !important;
       }
     </style>
+
+    <script type="application/javascript">
+      ;((window, document) => {
+        const $registerLink = document.getElementById('register-link')
+        const $createAccount = document.getElementById('createAccount')
+
+        if (!$registerLink || !$createAccount) return
+
+        const href = $createAccount.getAttribute('href')
+        $registerLink.setAttribute('href', href)
+        $registerLink.classList.add('js-show')
+        $createAccount.closest('.create').classList.add('js-hide')
+      })(window, window.document, undefined)
+      init()
+    </script>
   </block>
   <block name="body">
     <div class="container max-w-screen-lg mx-auto">
@@ -147,20 +162,5 @@
         </div>
       </div>
     </div>
-
-    <script type="application/javascript">
-      ;((window, document) => {
-        const $registerLink = document.getElementById('register-link')
-        const $createAccount = document.getElementById('createAccount')
-
-        if (!$registerLink || !$createAccount) return
-
-        const href = $createAccount.getAttribute('href')
-        $registerLink.setAttribute('href', href)
-        $registerLink.classList.add('js-show')
-        $createAccount.closest('.create').classList.add('js-hide')
-      })(window, window.document, undefined)
-      init()
-    </script>
   </block>
 </extends>
