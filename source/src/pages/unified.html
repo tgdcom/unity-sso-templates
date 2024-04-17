@@ -42,7 +42,7 @@
       }
     </style>
 
-    <script type="application/javascript">
+    <script type="application/javascript" defer>
       ;((window, document) => {
         const $registerLink = document.getElementById('register-link')
         const $createAccount = document.getElementById('createAccount')
@@ -54,7 +54,6 @@
         $registerLink.classList.add('js-show')
         $createAccount.closest('.create').classList.add('js-hide')
       })(window, window.document, undefined)
-      init()
     </script>
   </block>
   <block name="body">
