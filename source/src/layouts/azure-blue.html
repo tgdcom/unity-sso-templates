@@ -23,9 +23,13 @@
 
       .main {
         input:not([type='submit']) {
-          @apply w-[clamp(10rem,100%,25rem)] p-2 rounded border-2 border-brand-turquoise/75 shadow-sm;
+          @apply p-2 rounded border-2 border-brand-turquoise/75 shadow-sm;
           @apply focus:ring focus:ring-brand-turquoise/50;
           @apply disabled:border-slate-500/75;
+        }
+
+        input:is([type='text'], [type='email'], [type='password']) {
+          @apply w-[clamp(10rem,100%,25rem)];
         }
 
         a {
