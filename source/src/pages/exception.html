@@ -1,11 +1,20 @@
 <extends src="layouts/azure-blue.html" locals='{"title": "Error"}'>
   <block name="head">
     <style lang="postcss">
-      main {
+      .main {
         input:not([type='submit']) {
           @apply w-[clamp(10rem,100%,25rem)] p-2 rounded border-2 border-brand-turquoise/75 shadow-sm;
           @apply focus:ring focus:ring-brand-turquoise/50;
         }
+      }
+
+      .main {
+        @apply max-w-[45rem] mx-auto;
+      }
+
+      h2 {
+        @apply my-8 text-4xl font-bold;
+        @apply mt-8 mb-12 text-brand-turquoise text-4xl font-serif;
       }
 
       .entry-item {
@@ -16,26 +25,34 @@
         @apply hidden;
       }
 
-      .forgot-password {
-        @apply my-2 text-sm;
-      }
+      .error-page-help,
+      .error-page-messagedetails {
+        @apply my-4;
 
-      .create {
-        @apply my-2;
-
-        a {
-          @apply inline-block mx-1;
+        & > div {
+          @apply my-1;
         }
       }
     </style>
   </block>
   <block name="body">
-    <main id="api" class="main grow py-16 px-4" role="main">
+    <main id="api" class="main py-16 px-4" role="main">
       <!-- @remove in prod -->
-      <div
-        class="placeholder grid place-content-center w-full h-full text-5xl text-slate-200 bg-slate-500"
-      >
-        Placeholder
+      <h2>Sorry, but we're having trouble signing you in.</h2>
+      <div class="error-page-help">
+        We track these errors automatically, but if the problem persists feel
+        free to contact us. In the meantime, please try again.
+      </div>
+      <div class="error-page-messagedetails">
+        <div class="error-page-correlationid">
+          Correlation ID: 3325c071-d3e9-4669-937a-74768487e124
+        </div>
+        <div>Timestamp: 2024-04-17 20:25:35Z</div>
+        <div class="error-page-detail">
+          AADB2C90036: The request does not contain a URI to redirect the user
+          to post logout. Specify a URI in the post_logout_redirect_uri
+          parameter field.
+        </div>
       </div>
       <!-- /@remove -->
     </main>
